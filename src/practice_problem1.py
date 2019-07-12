@@ -161,6 +161,10 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and continue working on the problem.
         # --------------------------------------------------------------
+        if len(self.contents) + len(additional_contents) <= self.volume:
+            self.contents = self.contents + additional_contents
+        else:
+            self.contents =
 
     def double(self):
         """
