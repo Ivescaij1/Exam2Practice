@@ -33,8 +33,8 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     # run_test_practice_problem3a()
-    run_test_practice_problem3b()
-    # run_test_practice_problem3c()
+    # run_test_practice_problem3b()
+    run_test_practice_problem3c()
     # run_test_practice_problem3d()
     # run_test_practice_problem3e()
 
@@ -285,7 +285,6 @@ def practice_problem3b(sequence):
     for k in range(len(sequence) - 2):
         if sequence[k] == sequence[len(sequence) - 1]:
             return True
-
     return False
 
 
@@ -363,13 +362,19 @@ def practice_problem3c(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    places = []
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            places = places + [k]
+
+    return places
 
 
 def run_test_practice_problem3d():
