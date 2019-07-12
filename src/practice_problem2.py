@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Junfei Cai.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,34 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    sequence = [0, 0, 0, 0, 0, 0]
+    delta = 6
+    print()
+    print('Test 1 Expected: [6, 6, 6, 6, 6, 6]')
+    print('Test 1 Actual: ', practice_problem2a(sequence, delta))
+
+    # Test 2:
+    sequence = [-6, -6, -6]
+    delta = 6
+    print()
+    print('Test 2 Expected: [0, 0, 0]')
+    print('Test 2 Actual: ', practice_problem2a(sequence, delta))
+
+    # Test 3:
+    sequence = [1, 2, 3, 4, 5]
+    delta = 0
+    print()
+    print('Test 3 Expected: [1, 2, 3, 4, 5]')
+    print('Test 3 Actual: ', practice_problem2a(sequence, delta))
+
+    # Test 4:
+    sequence = [1, 1, 1, 1, 1, 1]
+    delta = 1
+    print()
+    print('Test 4 Expected: [2, 2, 2, 2, 2, 2]')
+    print('Test 4 Actual: ', practice_problem2a(sequence, delta))
 
 
 def practice_problem2a(sequence, delta):
