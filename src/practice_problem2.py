@@ -61,28 +61,28 @@ def run_test_practice_problem2a():
     delta = 6
     print()
     print('Test 1 Expected: [6, 6, 6, 6, 6, 6]')
-    print('Test 1 Actual: ', practice_problem2a(sequence, delta))
+    print('Test 1 Actual : ', practice_problem2a(sequence, delta))
 
     # Test 2:
     sequence = [-6, -6, -6]
     delta = 6
     print()
     print('Test 2 Expected: [0, 0, 0]')
-    print('Test 2 Actual: ', practice_problem2a(sequence, delta))
+    print('Test 2 Actual : ', practice_problem2a(sequence, delta))
 
     # Test 3:
     sequence = [1, 2, 3, 4, 5]
     delta = 0
     print()
     print('Test 3 Expected: [1, 2, 3, 4, 5]')
-    print('Test 3 Actual: ', practice_problem2a(sequence, delta))
+    print('Test 3 Actual : ', practice_problem2a(sequence, delta))
 
     # Test 4:
     sequence = [1, 1, 1, 1, 1, 1]
     delta = 1
     print()
     print('Test 4 Expected: [2, 2, 2, 2, 2, 2]')
-    print('Test 4 Actual: ', practice_problem2a(sequence, delta))
+    print('Test 4 Actual : ', practice_problem2a(sequence, delta))
 
 
 def practice_problem2a(sequence, delta):
@@ -104,13 +104,17 @@ def practice_problem2a(sequence, delta):
       :type delta:    int
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    for k in range(len(sequence)):
+        sequence[k] = sequence[k] + delta
+
+    return sequence
 
 
 def run_test_practice_problem2b():
