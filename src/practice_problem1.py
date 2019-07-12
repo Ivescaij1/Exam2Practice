@@ -44,8 +44,8 @@ def main():
     # run_test_double()
     # run_test_shrink()
     # run_test_double_then_shrink()
-    run_test_reset()
-#     run_test_steal()
+    # run_test_reset()
+    run_test_steal()
 #     run_test_get_history()
 #     run_test_combined_box()
 
@@ -108,7 +108,8 @@ class Box(object):
         else:
             self.contents = ''
 
-        self.initial_volume = volume
+        self.initial_volume = self.volume
+        self.initial_contents = self.contents
 
     def append_string(self, additional_contents):
         """
@@ -354,7 +355,7 @@ class Box(object):
           when this Box was constructed.
         """
         # --------------------------------------------------------------
-        # TODO: 7. Implement and test this function.
+        # DONE: 7. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -362,6 +363,8 @@ class Box(object):
         #    DIFFICULTY:      4
         #    TIME ESTIMATE:   5 minutes.
         # --------------------------------------------------------------
+        self.volume = self.initial_volume
+        self.contents = self.initial_contents
 
     def steal(self, other_box):
         """
