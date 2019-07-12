@@ -40,7 +40,7 @@ def main():
     ####################################################################
 
     # run_test_init()
-#     run_test_append_string()
+    # run_test_append_string()
 #     run_test_double()
 #     run_test_shrink()
 #     run_test_double_then_shrink()
@@ -140,7 +140,7 @@ class Box(object):
           :type additional_contents: str
         """
         # --------------------------------------------------------------
-        # TODO: 3. Implement and test this function.
+        # DONE: 3. Implement and test this function.
         #     See the testing code (below) for more examples.
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -161,10 +161,19 @@ class Box(object):
         #       Read_this_ONLY_when_asked_Part_2.txt
         #    and continue working on the problem.
         # --------------------------------------------------------------
+        s = ''
         if len(self.contents) + len(additional_contents) <= self.volume:
             self.contents = self.contents + additional_contents
         else:
-            self.contents =
+            s_length = len(additional_contents) - (self.volume - len(self.contents))
+            fitted_content = ''
+            for k in range(len(additional_contents) - s_length):
+                fitted_content = fitted_content + additional_contents[k]
+            self.contents = self.contents + fitted_content
+
+            for k in range(len(additional_contents) - s_length, len(additional_contents)):
+                s = s + additional_contents[k]
+        return s
 
     def double(self):
         """
