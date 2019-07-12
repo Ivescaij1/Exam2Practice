@@ -108,6 +108,8 @@ class Box(object):
         else:
             self.contents = ''
 
+        self.initial_volume = volume
+
     def append_string(self, additional_contents):
         """
         What comes in:
@@ -166,13 +168,15 @@ class Box(object):
             self.contents = self.contents + additional_contents
         else:
             s_length = len(additional_contents) - (self.volume - len(self.contents))
-            fitted_content = ''
+            fitted_contents = ''
             for k in range(len(additional_contents) - s_length):
-                fitted_content = fitted_content + additional_contents[k]
-            self.contents = self.contents + fitted_content
+                fitted_contents = fitted_contents + additional_contents[k]
+
+            self.contents = self.contents + fitted_contents
 
             for k in range(len(additional_contents) - s_length, len(additional_contents)):
                 s = s + additional_contents[k]
+
         return s
 
     def double(self):
@@ -260,7 +264,7 @@ class Box(object):
           :type new_volume: int
         """
         # --------------------------------------------------------------
-        # TODO: 5. Implement and test this function.
+        # DONE: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -271,6 +275,20 @@ class Box(object):
         # IMPORTANT: Write a solution to this problem in pseudo-code,
         # and THEN translate the pseudo-code to a solution.
         # --------------------------------------------------------------
+        discards = ''
+        if new_volume <= len(self.contents):
+            fitted_contents = ''
+            for k in range(new_volume):
+                fitted_contents = fitted_contents + self.contents[k]
+
+            for k in range(new_volume, len(self.contents)):
+                discards = discards + self.contents[k]
+
+            self.contents = fitted_contents
+
+        self.volume = new_volume
+        return discards
+
 
     def double_then_shrink(self, new_volume):
         """
