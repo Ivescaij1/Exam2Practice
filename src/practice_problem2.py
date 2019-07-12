@@ -202,13 +202,23 @@ def practice_problem2b(sequence):
       :type sequence [str]
     """
     ####################################################################
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
+    str_sequence = ''
+    for k in range(len(sequence)):
+        if sequence[k] == '':
+            k_str = ''
+            str_sequence = str_sequence + k_str
+        else:
+            k_str = str(sequence[k][0])
+            str_sequence = str_sequence + k_str
+
+    return str_sequence
 
 
 # ----------------------------------------------------------------------
