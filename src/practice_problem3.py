@@ -34,9 +34,9 @@ def main():
     """ Calls the   TEST   functions in this module. """
     # run_test_practice_problem3a()
     # run_test_practice_problem3b()
-    run_test_practice_problem3c()
+    # run_test_practice_problem3c()
     # run_test_practice_problem3d()
-    # run_test_practice_problem3e()
+    run_test_practice_problem3e()
 
 
 def is_prime(n):
@@ -450,17 +450,21 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-
+    for k in range(len(sequence)):
+        if sequence[k] == 0:
+            place = k
+            return place
+    return -1
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # DONEc: 6. Just ABOVE this TODOs, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -474,6 +478,11 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    places = practice_problem3c(sequence)
+    if places == []:
+        return -1
+    else:
+        return places[0]
 
 
 def run_test_practice_problem3e():
@@ -536,13 +545,18 @@ def practice_problem3e(sequence):
       :type sequence: list(float)    or tuple(float)
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    length = (len(sequence) + 1) // 2
+    even_sum = 0
+    for k in range(length):
+        even_sum = even_sum + sequence[2 * k]
+    return even_sum
 
 
 # ----------------------------------------------------------------------
